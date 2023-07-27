@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Interest Calc</title>
+</head>
+<body>
+    <div>
+        <h1>Interest Calc</h1>
+        <p>
+            <label>Principal Amount</label><br>
+            <input type="text" id="pamt"><span> &#8377;</span>
+        </p>
+        <p>
+            <label>Rate of Interest</label><br>
+            <input type="text" id="roi" maxlength="10"><span>%</span>
+        </p>
+        <p>
+            <label>Time</label><br>
+            <input type="text" id="time" maxlength="10"><span>Year(s)</span>
+        </p>
+        <p class="btn-para">
+            <button onclick="getAmount()">get interest</button>
+           
+        </p>
+        <p>
+            <output id="intAmt" class="ot"></output><br>
+            <output id="totAmt" class="ot"></output><br>
+        </p>
+    </div>
+    <script>
+        function getAmount() 
+{
+    let p, t, r, si, tamt;
+    p = pamt.value;
+    t = time.value;
+    r = roi.value;
+    si = p * r * t / 100;
+    tamt = parseFloat(p) + si;
+    intAmt.value = "Interest Amount-" + si;
+    totAmt.value = "Total Amount-" + tamt;
+}
+
+    </script>
+</body>
+</html>
